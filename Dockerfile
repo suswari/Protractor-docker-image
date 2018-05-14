@@ -73,12 +73,7 @@ RUN npm install --unsafe-perm --save-exact -g protractor@5.0.0 \
 # https://docs.npmjs.com/getting-started/fixing-npm-permissions
 ENV NODE_PATH /usr/lib/node_modules
 # Global reporters for protractor
-RUN npm install --unsafe-perm -g \
-    jasmine-reporters \
-    jasmine-spec-reporter \
-    protractor-jasmine2-html-reporter \
-    jasmine-allure-reporter \
-    protractor-console
+RUN npm install 
 RUN npm run-script tsc
 # Set the working directory
 WORKDIR /protractor/
