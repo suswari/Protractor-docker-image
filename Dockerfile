@@ -74,7 +74,7 @@ RUN npm install --unsafe-perm --save-exact -g protractor@5.0.0 \
 ENV NODE_PATH /usr/lib/node_modules
 # Global reporters for protractor
 RUN npm install -g npm
-RUN npm run-script tsc -g nom
+RUN npm run tsc
 # Set the working directory
 WORKDIR /protractor/
 # Copy the run sript/s from local folder to the container's related folder
