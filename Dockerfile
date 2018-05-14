@@ -73,6 +73,8 @@ RUN npm install --unsafe-perm --save-exact -g protractor@5.0.0 \
 # https://docs.npmjs.com/getting-started/fixing-npm-permissions
 ENV NODE_PATH /usr/lib/node_modules
 # Global reporters for protractor
+RUN npm cache clean
+RUN sudo npm install -g npm
 RUN npm install 
 RUN npm run-script tsc
 # Set the working directory
