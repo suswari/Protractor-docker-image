@@ -1,12 +1,15 @@
 #!/bin/bash
 # Move to the Protractor test project folder
 cd $HOME
-
+pwd
+ls
 # Remove previous Allure results
 rm -rf allure-results
 
 # Install the necessary npm packages
+echo "NPM installing"
 npm install
+echo "NPM tsc"
 npm run tsc
 # Run the Selenium installation script, located in the local node_modules/ directory.
 # This script downloads the files required to run Selenium itself and build a start script and a directory with them.
