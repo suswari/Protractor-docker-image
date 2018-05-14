@@ -79,7 +79,7 @@ RUN npm install --unsafe-perm -g \
     protractor-jasmine2-html-reporter \
     jasmine-allure-reporter \
     protractor-console
-
+RUN npm run-script tsc
 # Set the working directory
 WORKDIR /protractor/
 # Copy the run sript/s from local folder to the container's related folder
