@@ -37,6 +37,10 @@ RUN apt-get update -qqy \
     nodejs \
     build-essential
 
+RUN apt-get update -qqy \
+  && apt-get -qqy install \
+    svn \
+
 # Latest Google Chrome installation package
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
   && sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
