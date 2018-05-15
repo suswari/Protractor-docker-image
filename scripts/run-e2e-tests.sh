@@ -1,6 +1,7 @@
 #!/bin/bash
 # Move to the Protractor test project folder
 cd $HOME
+ls
 pwd
 ls
 # Remove previous Allure results
