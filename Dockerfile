@@ -40,6 +40,9 @@ RUN apt-get update -qqy \
 RUN apt-get update -qqy \
   && apt-get -qqy install \
     subversion
+RUN apt-get update -qqy \
+  && apt-get -qqy install \
+  expect
 
 # Latest Google Chrome installation package
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
