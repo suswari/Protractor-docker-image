@@ -8,29 +8,32 @@ rm -rf allure-results
 # set svn_url [lindex $argv 2]
 # /usr/bin/expect << EOF
 # ./svn info svncheckout | grep 'not a working copy' &> /dev/null
-RESULT=$(svn info svncheckout| grep -q 'not a working copy')
-echo "!!!!!!!!!!!!!!!!!!!!"
-echo $RESULT
-echo "!!!!!!!!!!!!!!!!!!!!"
-if svn info svncheckout | grep -q 'not a working copy'; then
+# RESULT=$(svn info svncheckout| grep -q 'not a working copy')
+# echo "!!!!!!!!!!!!!!!!!!!!"
+# echo $RESULT
+# echo "!!!!!!!!!!!!!!!!!!!!"
+if svn info svncheckout; then
   echo "in if"
   pwd
   ls
-  svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA $HOME/svncheckout
+  svn up svncheckout
+
 else
   echo "in else"
   pwd
   ls
-   svn up svncheckout
+  spawn svn --username=38002 --password=Microsoft@15 list https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
+  expect "(R)eject, accept (t)emporarily or accept (p)ermanently? "
+  send -- "p\r"
+  expect "Store password unencrypted (yes/no)? "
+  send "no\r"
+  expect -re "root@.*:\/#"
+  EOF
+  svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA $HOME/svncheckout --username=38002 --password=Microsoft@15 --quiet
+
 fi
 
-# spawn svn --username=38002 --password=Microsoft@15 list https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
-# expect "(R)eject, accept (t)emporarily or accept (p)ermanently? "
-# send -- "p\r"
-# expect "Store password unencrypted (yes/no)? "
-# send "no\r"
-# expect -re "root@.*:\/#"
-# EOF
+
 echo "!!!!!!!!!!!!!!!!!!!!"
 ls
 echo "!!!!!!!!!!!!!!!!!!!!"
