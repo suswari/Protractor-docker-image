@@ -7,13 +7,12 @@ rm -rf allure-results
 # set svn_password [lindex $argv 1]
 # set svn_url [lindex $argv 2]
 # /usr/bin/expect << EOF
-TEST='suswari'
-RESULT=$(svn info svncheckout| grep "not a working copy")
-echo "!!!!!!!!!!!!!!!!!!!!"
-echo $RESULT
-echo $TEST
-echo "!!!!!!!!!!!!!!!!!!!!"
-if [[ $RESULT ]]; then
+./svn info svncheckout | grep 'not a working copy' &> /dev/null
+# RESULT=$(svn info svncheckout| grep "not a working copy")
+# echo "!!!!!!!!!!!!!!!!!!!!"
+# echo $RESULT
+# echo "!!!!!!!!!!!!!!!!!!!!"
+if [ $? == 0 ]; then
   echo "in if"
   pwd
   ls
