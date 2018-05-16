@@ -4,7 +4,7 @@ ls
 cd $HOME
 pwd
 ls
-mkdir svn
+
 # Remove previous Allure results
 rm -rf allure-results
 # set svn_username [lindex $argv 0]
