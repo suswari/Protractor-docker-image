@@ -17,6 +17,7 @@ send -- "p\r"
 expect "Store password unencrypted (yes/no)? "
 send "no\r"
 expect -re "root@.*:\/#"
+EOF
 
 # svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA HUDX-729_SA --username 38002 --password Microsoft@15
 ls
@@ -59,4 +60,3 @@ rm -rf .config .local .pki .cache .dbus .gconf .mozilla
 chmod -Rf 777 allure-results test-results
 
 exit $RESULT
-EOF
