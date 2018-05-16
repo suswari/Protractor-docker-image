@@ -15,9 +15,10 @@ rm -rf allure-results
 # send "no\r"
 # expect -re "root@.*:\/#"
 # EOF
+chmod -R 777 HUDX-729_SA/cfml/deployment_root/test/e2e
 cd HUDX-729_SA/cfml/deployment_root/test/e2e
 echo "!!!!!!!!!!!!!!!!!!!!"
-ls 
+ls
 echo "!!!!!!!!!!!!!!!!!!!!"
 # Install the necessary npm packages
 echo "NPM installing"
