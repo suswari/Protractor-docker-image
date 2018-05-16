@@ -7,9 +7,8 @@ rm -rf allure-results
 # set svn_password [lindex $argv 1]
 # set svn_url [lindex $argv 2]
 # /usr/bin/expect << EOF
-MYPROJECT =  https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
 RESULT=`svn info | grep "not a working copy"`;
-if [[ -n $RESULT ]]; then svn co $MYPROJECT svncheckout; fi
+if [[ -n $RESULT ]]; then svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA svncheckout; fi
 if [[ $RESULT ]]; then svn up svncheckout; fi
 
 # spawn svn --username=38002 --password=Microsoft@15 list https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
