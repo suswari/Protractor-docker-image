@@ -15,10 +15,10 @@ rm -rf allure-results
 # send "no\r"
 # expect -re "root@.*:\/#"
 # EOF
-
+echo "!!!!!!!!!!!!!!!!!!!!"
 ls /protractor/project
+echo "!!!!!!!!!!!!!!!!!!!!"
 pwd
-echo "NPM installing"
 # Install the necessary npm packages
 echo "NPM installing"
 npm install
