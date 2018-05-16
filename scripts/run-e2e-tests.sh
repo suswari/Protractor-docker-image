@@ -6,7 +6,6 @@ rm -rf allure-results
 # set svn_username [lindex $argv 0]
 # set svn_password [lindex $argv 1]
 # set svn_url [lindex $argv 2]
-# /usr/bin/expect << EOF
 # ./svn info svncheckout | grep 'not a working copy' &> /dev/null
 # RESULT=$(svn info svncheckout| grep -q 'not a working copy')
 # echo "!!!!!!!!!!!!!!!!!!!!"
@@ -22,17 +21,17 @@ else
   echo "in else"
   pwd
   ls
-  spawn svn --username=38002 --password=Microsoft@15 list https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
-  expect "(R)eject, accept (t)emporarily or accept (p)ermanently? "
-  send -- "p\r"
-  expect "Store password unencrypted (yes/no)? "
-  send "no\r"
-  expect -re "root@.*:\/#"
-  EOF
-  svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA $HOME/svncheckout --username=38002 --password=Microsoft@15 --quiet
+  svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA $HOME/svncheckout --username=38002 --password=Microsoft@15 --quiet --trust-server-cert
 
 fi
-
+# /usr/bin/expect << EOF
+# spawn svn --username=38002 --password=Microsoft@15 list https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
+# expect "(R)eject, accept (t)emporarily or accept (p)ermanently? "
+# send -- "p\r"
+# expect "Store password unencrypted (yes/no)? "
+# send "no\r"
+# expect -re "root@.*:\/#"
+# EOF
 
 echo "!!!!!!!!!!!!!!!!!!!!"
 ls
