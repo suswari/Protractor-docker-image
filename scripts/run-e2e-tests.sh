@@ -4,6 +4,7 @@ ls
 cd $HOME
 pwd
 ls
+mkdir svn
 # Remove previous Allure results
 rm -rf allure-results
 # set svn_username [lindex $argv 0]
@@ -19,10 +20,9 @@ send "no\r"
 expect -re "root@.*:\/#"
 EOF
 
-# svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA HUDX-729_SA --username 38002 --password Microsoft@15
-ls
-pwd
+svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA HUDX-729_SA --username 38002 --password Microsoft@15
 ls /protractor/project
+pwd
 cd cfml/deployment_root/test/e2e
 
 # Install the necessary npm packages
