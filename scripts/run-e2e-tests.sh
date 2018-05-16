@@ -15,7 +15,6 @@ rm -rf allure-results
 # send "no\r"
 # expect -re "root@.*:\/#"
 # EOF
-chmod -R 777 HUDX-729_SA/cfml/deployment_root/test/e2e
 cd HUDX-729_SA/cfml/deployment_root/test/e2e
 echo "!!!!!!!!!!!!!!!!!!!!"
 ls
@@ -24,7 +23,7 @@ echo "!!!!!!!!!!!!!!!!!!!!"
 echo "NPM installing"
 npm install
 echo "NPM tsc"
-npm run tsc
+npm run-script tsc
 # Run the Selenium installation script, located in the local node_modules/ directory.
 # This script downloads the files required to run Selenium itself and build a start script and a directory with them.
 # When this script is finished, we can start the standalone version of Selenium with the Chrome driver by executing the start script.
