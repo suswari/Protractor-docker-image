@@ -8,7 +8,10 @@ rm -rf allure-results
 # set svn_url [lindex $argv 2]
 # /usr/bin/expect << EOF
 RESULT=`svn info | grep "not a working copy"`;
-if [[ -n $RESULT ]]; then
+echo "!!!!!!!!!!!!!!!!!!!!"
+echo $RESULT
+echo "!!!!!!!!!!!!!!!!!!!!"
+if [[ $RESULT ]]; then
   echo "in if"
   pwd
   ls
