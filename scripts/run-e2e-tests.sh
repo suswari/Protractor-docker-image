@@ -16,7 +16,7 @@ rm -rf allure-results
 # expect -re "root@.*:\/#"
 # EOF
 echo "!!!!!!!!!!!!!!!!!!!!"
-ls /protractor/project
+ls /protractor/project/HUDX-729_SA
 echo "!!!!!!!!!!!!!!!!!!!!"
 pwd
 # Install the necessary npm packages
