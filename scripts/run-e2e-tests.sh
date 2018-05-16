@@ -8,8 +8,17 @@ rm -rf allure-results
 # set svn_url [lindex $argv 2]
 # /usr/bin/expect << EOF
 RESULT=`svn info | grep "not a working copy"`;
-if [[ -n $RESULT ]]; then svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA svncheckout; fi
-if [[ $RESULT ]]; then svn up svncheckout; fi
+if [[ -n $RESULT ]]; then
+  echo "in if"
+  pwd
+  ls
+  svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA $HOME/svncheckout
+else
+  echo "in else"
+  pwd
+  ls
+   svn up svncheckout
+fi
 
 # spawn svn --username=38002 --password=Microsoft@15 list https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
 # expect "(R)eject, accept (t)emporarily or accept (p)ermanently? "
@@ -18,10 +27,11 @@ if [[ $RESULT ]]; then svn up svncheckout; fi
 # send "no\r"
 # expect -re "root@.*:\/#"
 # EOF
-cd svncheckout/cfml/deployment_root/test/e2e
 echo "!!!!!!!!!!!!!!!!!!!!"
 ls
 echo "!!!!!!!!!!!!!!!!!!!!"
+cd svncheckout/cfml/deployment_root/test/e2e
+
 # Install the necessary npm packages
 echo "NPM installing"
 npm install
