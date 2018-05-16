@@ -6,7 +6,17 @@ pwd
 ls
 # Remove previous Allure results
 rm -rf allure-results
-svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA HUDX-729_SA --username 38002 --password Microsoft@15
+# set svn_username [lindex $argv 0]
+# set svn_password [lindex $argv 1]
+# set svn_url [lindex $argv 2]
+
+spawn svn --username=38002 --password=Microsoft@15 list https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
+expect "(R)eject, accept (t)emporarily or accept (p)ermanently? "
+send -- "p\r"
+expect "Store password unencrypted (yes/no)? "
+send "no\r"
+expect -re "root@.*:\/#"
+# svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA HUDX-729_SA --username 38002 --password Microsoft@15
 ls
 cd HUDX-729_SA/cfml/deployment_root/test/e2e
 
