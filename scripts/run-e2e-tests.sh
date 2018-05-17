@@ -37,6 +37,7 @@ cd svncheckout/cfml/deployment_root/test/e2e
 # Install the necessary npm packages
 echo "NPM installing"
 npm install
+npm run-script tsc
 
 # Run the Selenium installation script, located in the local node_modules/ directory.
 # This script downloads the files required to run Selenium itself and build a start script and a directory with them.
