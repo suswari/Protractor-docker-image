@@ -62,7 +62,6 @@ DISPLAY=:10 protractor $@
 export RESULT=$?
 
 echo "Protractor tests have done"
-docker cp /protractor/project/svncheckout/cfml/deployment_root/test/e2e/reports/json/cucumber_report.json - 5d5c416f9a05:/var/jenkins_home/workspace/NewProtractorTests/cucumber_report
 # Close the XVFB display
 killall Xvfb
 # Remove temporary folders
