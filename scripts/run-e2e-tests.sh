@@ -1,6 +1,8 @@
 #!/bin/bash
 # Move to the Protractor test project folder
 cd $HOME
+echo $HOME
+ls /protractor/project
 # Remove previous Allure results
 rm -rf allure-results
 # set svn_username [lindex $argv 0]
@@ -13,16 +15,10 @@ rm -rf allure-results
 # echo "!!!!!!!!!!!!!!!!!!!!"
 if svn info svncheckout; then
   echo "in if"
-  pwd
-  ls /protractor/project
   svn up svncheckout
-
 else
   echo "in else"
-  pwd
-  ls /protractor/project
   svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA $HOME/svncheckout --username=38002 --password=Microsoft@15 --quiet --trust-server-cert
-
 fi
 # /usr/bin/expect << EOF
 # spawn svn --username=38002 --password=Microsoft@15 list https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
@@ -34,9 +30,9 @@ fi
 # EOF
 
 echo "!!!!!!!!!!!!!!!!!!!!"
-ls
+ls /protractor/project
 echo "!!!!!!!!!!!!!!!!!!!!"
-cd project/svncheckout/cfml/deployment_root/test/e2e
+cd svncheckout/cfml/deployment_root/test/e2e
 
 # Install the necessary npm packages
 echo "NPM installing"
