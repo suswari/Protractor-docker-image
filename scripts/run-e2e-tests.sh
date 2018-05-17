@@ -14,7 +14,7 @@ rm -rf allure-results
 if svn info svncheckout; then
   echo "in if"
   pwd
-  ls
+  ls /protractor/project
   svn up svncheckout
 
 else
