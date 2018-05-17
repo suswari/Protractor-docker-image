@@ -20,7 +20,7 @@ if svn info svncheckout; then
 else
   echo "in else"
   pwd
-  ls
+  ls /protractor/project
   svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA $HOME/svncheckout --username=38002 --password=Microsoft@15 --quiet --trust-server-cert
 
 fi
@@ -36,7 +36,7 @@ fi
 echo "!!!!!!!!!!!!!!!!!!!!"
 ls
 echo "!!!!!!!!!!!!!!!!!!!!"
-cd svncheckout/cfml/deployment_root/test/e2e
+cd project/svncheckout/cfml/deployment_root/test/e2e
 
 # Install the necessary npm packages
 echo "NPM installing"
