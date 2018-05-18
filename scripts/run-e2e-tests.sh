@@ -1,6 +1,6 @@
 #!/bin/bash
 # Move to the Protractor test project folder
-cd $HOME
+cd $HOME/cfml/deployment_root/test/e2e
 # Remove previous Allure results
 # rm -rf allure-results
 # set svn_username [lindex $argv 0]
