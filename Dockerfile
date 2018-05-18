@@ -96,6 +96,6 @@ RUN mkdir /protractor/project
 ENV HOME=/protractor/project
 # Set the file access permissions (read, write and access) recursively for the new folders
 RUN chmod -Rf 777 .
-#RUN rm -rf /protractor/project/*
+RUN rm -rf /protractor/project/*
 # Container entry point
 ENTRYPOINT ["/entrypoint.sh"]

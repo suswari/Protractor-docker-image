@@ -1,25 +1,20 @@
 #!/bin/bash
 # Move to the Protractor test project folder
 cd $HOME
-echo $HOME
-ls /protractor/project
 # Remove previous Allure results
-rm -rf allure-results
+# rm -rf allure-results
 # set svn_username [lindex $argv 0]
 # set svn_password [lindex $argv 1]
 # set svn_url [lindex $argv 2]
 # ./svn info svncheckout | grep 'not a working copy' &> /dev/null
 # RESULT=$(svn info svncheckout| grep -q 'not a working copy')
-# echo "!!!!!!!!!!!!!!!!!!!!"
-# echo $RESULT
-# echo "!!!!!!!!!!!!!!!!!!!!"
-if svn info svncheckout; then
-  echo "in if"
-  svn up svncheckout
-else
-  echo "in else"
-  svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA $HOME/svncheckout --username=38002 --password=Microsoft@15 --quiet --trust-server-cert
-fi
+## if svn info svncheckout; then
+##   echo "in if"
+##   svn up svncheckout
+## else
+##   echo "in else"
+##   svn co https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA $HOME/svncheckout --username=38002 --password=Microsoft@15 --quiet --trust-server-cert
+## fi
 # /usr/bin/expect << EOF
 # spawn svn --username=38002 --password=Microsoft@15 list https://svn.tms.icfi.com/svn/HUD/onecpd/features/HUDX-729_SA
 # expect "(R)eject, accept (t)emporarily or accept (p)ermanently? "
@@ -29,17 +24,17 @@ fi
 # expect -re "root@.*:\/#"
 # EOF
 
-echo "!!!!!!!!!!!!!!!!!!!!"
-ls /protractor/project
-echo "!!!!!!!!!!!!!!!!!!!!"
-cd svncheckout/cfml/deployment_root/test/e2e
+# echo "!!!!!!!!!!!!!!!!!!!!"
+# ls /protractor/project
+# echo "!!!!!!!!!!!!!!!!!!!!"
+# cd svncheckout/cfml/deployment_root/test/e2e
 
 # Install the necessary npm packages
 echo "NPM installing"
 npm install
+# Complie the ts files and transcript to js files
 echo "NPM tsc"
 npm run-script tsc
-
 # Run the Selenium installation script, located in the local node_modules/ directory.
 # This script downloads the files required to run Selenium itself and build a start script and a directory with them.
 # When this script is finished, we can start the standalone version of Selenium with the Chrome driver by executing the start script.
