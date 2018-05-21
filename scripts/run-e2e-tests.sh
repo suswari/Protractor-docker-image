@@ -1,5 +1,6 @@
 #!/bin/bash
 # Move to the Protractor test project folder
+ls
 cd $HOME
 echo "!!!!!!!!!!!!!!!!!!!!"
 pwd
