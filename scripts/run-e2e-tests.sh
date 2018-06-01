@@ -5,6 +5,7 @@ cd $HOME
 ls
 echo "NPM installing"
 npm i npm@latest -g
+npm install
 ls
 # Complie the ts files and transcript to js files
 echo "NPM tsc"
