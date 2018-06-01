@@ -2,8 +2,10 @@
 # Move to the Protractor test project folder
 cd $HOME
 # Install the necessary npm packages
+ls
 echo "NPM installing"
 npm i npm@latest -g
+ls
 # Complie the ts files and transcript to js files
 echo "NPM tsc"
 npm run tsc
