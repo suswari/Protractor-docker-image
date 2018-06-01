@@ -21,9 +21,9 @@ Xvfb :10 -screen 0 1920x1080x24 2>&1 >/dev/null &
 # export DISPLAY=:10.0
 
 # Right now this is not necessary, because of 'directConnect: true' in the 'e2e.conf.js'
-# echo "Starting webdriver"
-# node ./node_modules/protractor/bin/webdriver-manager start [OR webdriver-manager start] &
-# echo "Finished starting webdriver"
+echo "Starting webdriver"
+node ./node_modules/protractor/bin/webdriver-manager start [OR webdriver-manager start] &
+echo "Finished starting webdriver"
 sleep 20
 
 echo "Running Protractor tests"
