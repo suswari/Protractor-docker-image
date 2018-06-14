@@ -10,7 +10,7 @@ ls
 # Complie the ts files and transcript to js files
 echo "NPM tsc"
 npm run tsc
-# echo 'syswari'
+echo 'syswari'
 # Run the Selenium installation script, located in the local node_modules/ directory.
 # This script downloads the files required to run Selenium itself and build a start script and a directory with them.
 # When this script is finished, we can start the standalone version of Selenium with the Chrome driver by executing the start script.
