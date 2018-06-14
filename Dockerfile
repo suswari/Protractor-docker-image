@@ -69,7 +69,8 @@ RUN rm -fr /root/tmp
 # Jasmine and protractor global install
 # 2. Step to fixing the error for Node.js native addon build tool (node-gyp)
 # https://github.com/nodejs/node-gyp/issues/454
-RUN npm install --unsafe-perm --save-exact -g protractor@5.0.0 \
+Run npm i npm@latest -g
+RUN npm install --unsafe-perm --save-exact -g protractor@5.1.1 \
 # Get the latest Google Chrome driver
   && npm update \
 # Get the latest WebDriver Manager
