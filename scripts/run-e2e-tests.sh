@@ -24,7 +24,7 @@ Xvfb :10 -screen 0 1920x1080x24 2>&1 >/dev/null &
 
 # Right now this is not necessary, because of 'directConnect: true' in the 'e2e.conf.js'
 echo "Starting webdriver"
-webdriver-manager start --versions.chrome=2.38 --versions.standalone=2.3.1 --detach
+sudo webdriver-manager start --versions.chrome=2.38 --versions.standalone=2.3.1 --detach
 # node ./node_modules/protractor/bin/webdriver-manager start [OR webdriver-manager start] &
 echo "Finished starting webdriver"
 sleep 20
